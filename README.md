@@ -19,11 +19,11 @@ We're also going to implement the ability to just directly click on what we want
   * Then append that `li` to your ol like always and you're good to go! Our css will take care of the layout, though feel free to tinker with it. Or redo it entirely!
 * Now let's write a function that prints all our todos out to the dom. Remember to pass in both the name *and* the date. Our single-todo-printing function is expecting them!
 * Once you have both those functions, call the list-printing one and see if it displays our hard-coded data to the dom. If so, congrats!
-* Now write a helper function that will add one todo to our data. It should take in a task name and add it to our todos, along with a `false` value for its completeness (it's not done if it was just added!) and the result of a call to our helper function `getCurrentDateAndTime` for its date.
+* Now write a helper function that will add one todo to our data. It should take in a task name *and a date* and add it to our todos, along with a `false` value for its completeness (it's not done if it was just added!).
 * Next is a nice helper function to *remove* a todo from our data, given a specific index. Don't forget to remove it from other arrays if you're storing them that way!
-* 
 * Now our function for actually taking user input and making a task out of it. It should be pretty easy given our helper functions:
   * Grab the user's input.
+  * Make a new date, so that we put the same date in our data and on the dom.
   * Call your function to add that task to our data.
   * And call your function to print one task to the dom.
   * Add an event listener to run that whole thing when the user presses ADD, and try it out!
