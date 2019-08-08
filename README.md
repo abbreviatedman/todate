@@ -35,10 +35,14 @@ We're also going to implement the ability to just directly click on what we want
 * Now we need its index so we can change it on the dom and in our data. One way to do this is to go back up to when we made the `li` and give it an `id`, which we can grab again now (making sure to convert it to a number, because all css values are strings in JavaScript). But if you want a harder challenge, you can grab all the children of our ol with `.childNodes`, convert it to an array with `Array.from`, and use `indexOf` to find the index of our `li` within that array.
 * Now that we've got an index, we can call our helper functions to mark it complete in the data and style it on the dom! (Again, make sure you're correcting for any off-by-one errors. Lists on the dom are 1-based counting!)
 * We'll need a helper function for our deletion: one that deletes everything on the list.
-* Now for deleting the completed items. Add an event listener for our deletion handling function. Now write a function that builds new data *without* the completed ones, then uses our helper function to clear the list, and our helper function to print the list again based on our data (which will now *not* have completed items in it).
+* Now for deleting the completed items. Add an event listener for our deletion handling function. Now write a function that builds new data *without* the completed ones, then uses our helper function to clear the list, and our previous helper function to print the list again based on our data (which will now *not* have completed items in it).
 * And you're done!
 
 
 ### Stretch Goals:
 
-Coming soon!
+* Allow the user to toggle an item from completed back to not-completed. Where before you could get away with setting any clicked item to `true`, now we'll have to check if it's currently completed or not and act accordingly.
+* Set the background of every other `li` to a different color to make scanning easier. For an extra challenge, do this entirely with JavaScript (though you can dynamically toggle a css `class` instead of manually setting `style` properties, if you like).
+* On hover, make the `li` and its text slightly bigger, and make sure that when the mouse leaves that `li` that we put the text back in its previous font size. Again, use JS.
+* Don't show the date at all unless the `li` is hovered. Again, use JS.
+* When an `li` is hovered, add a delete button *underneath* it, which, if pressed, would *only* delete that item, whether it's completed or not. Odd fact I recently learned: `appendChild` will remove a node you pass to it from wherever it is on the DOM, *then* append it to where you want it to go. You may find this fact... useful.
